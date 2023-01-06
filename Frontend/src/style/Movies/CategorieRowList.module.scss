@@ -1,0 +1,9 @@
+.container {
+  background-color: #141414;
+}
+
+.categoriesList {
+  display: flex;
+  flex-direction: column;
+  // overflow-x: scroll;
+}

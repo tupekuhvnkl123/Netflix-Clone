@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../../public/LandingPageBackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 740px) {
+  .container {
+    background-image: none;
+    background-color: black;
+  }
+}

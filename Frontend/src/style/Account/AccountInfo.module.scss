@@ -1,0 +1,108 @@
+.main {
+  background-color: #f3f3f3;
+  min-height: 65vh;
+  padding: 3.5rem 0;
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  margin-bottom: 1rem;
+  h1 {
+    font-weight: 500;
+    color: rgb(55, 55, 55);
+  }
+}
+
+.subjectTitle {
+  width: 15rem;
+  margin-right: 2rem;
+}
+
+.membership {
+  padding: 1rem 0 2rem 0;
+  display: flex;
+  flex-direction: row;
+  p {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-weight: 450;
+    font-size: 1.3rem;
+    color: #737373;
+  }
+  button {
+    margin-top: 0.5rem;
+    padding: 0.8rem 2.3rem;
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 1px solid #7373734a;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #ebebeb;
+  }
+}
+
+.planDetails {
+  padding: 1rem 0 2rem 0;
+  display: flex;
+  flex-direction: row;
+  h2 {
+    font-weight: 450;
+    font-size: 1.3rem;
+    color: #737373;
+  }
+
+  .premiumUltraHd {
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    margin-bottom: 1rem;
+    p {
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 85vw;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: 90vw;
+  }
+}
+@media (max-width: 500px) {
+  .subjectTitle {
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  .membership {
+    padding: 1rem 0 2rem 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .subjectTitle {
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  .planDetails {
+    padding: 1rem 0 2rem 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

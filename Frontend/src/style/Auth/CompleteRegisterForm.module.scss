@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    position: relative;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 3.75rem 4.2rem 6rem 4.2rem;
+  border-radius: 4px;
+  margin-top: 3rem;
+  min-height: 30rem;
+  width: 27.5rem;
+
+  input {
+    width: 100%;
+    height: 3.1rem;
+    padding: 0.9rem 1rem 0.1rem 1rem;
+    font-size: 1.1rem;
+    background: #333;
+    border: none;
+    margin-top: 1rem;
+    border-radius: 4px;
+    outline: none;
+    color: white;
+  }
+
+  input:focus {
+    background: rgb(65, 65, 65);
+  }
+
+  input:focus + label,
+  input[value]:not([value=""]) + label {
+    font-size: 0.8rem;
+    top: calc(2px + 1rem);
+  }
+
+  input.unValid {
+    border-bottom: 2px solid #e87c03;
+  }
+
+  label {
+    position: absolute;
+    color: #8c8c8c;
+    font-size: 1rem;
+    left: 15px;
+    top: calc(13px + 1rem);
+    pointer-events: none;
+    transition: all 0.1s ease-out;
+  }
+
+  button {
+    width: 100%;
+    height: 3rem;
+    background: #e50914;
+    color: white;
+    border-radius: 5px;
+    margin: 2rem 0 1rem 0;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.form .errorMsg {
+  color: #e87c03;
+  margin: 0;
+  font-size: 0.8rem;
+  width: 90%;
+}
+
+.form h1 {
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.form .signUpLink {
+  color: #737373;
+  margin-top: 2rem;
+  a {
+    color: white;
+  }
+}
+
+@media (max-width: 740px) {
+  .form {
+    padding: 1.5rem 2rem 4rem 2rem;
+    width: 100%;
+    input {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 350px) {
+  .form {
+    padding: 1.5rem 1rem 4rem 1rem;
+  }
+}

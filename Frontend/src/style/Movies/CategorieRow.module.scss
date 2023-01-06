@@ -1,0 +1,138 @@
+.loadingCategorieList {
+  display: flex;
+  overflow: hidden;
+  div {
+    margin-right: 0.23rem;
+  }
+  .skeletonItem {
+    width: 262px;
+    height: 262px;
+  }
+}
+
+.row {
+  margin-bottom: 3.5rem;
+}
+.categorieTitle {
+  color: white;
+  margin: 0 0 1rem 4rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.listContainer {
+  position: relative;
+}
+
+.arrowContainer {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  z-index: 100;
+}
+
+.arrowContainer:hover {
+  background-color: hsla(0, 0, 0, 0.35) !important;
+
+  .arrows {
+    transform: scale(1.35);
+    transition: all 0.2s ease-out;
+  }
+}
+.arrows {
+  position: absolute;
+  top: 50%;
+  color: white;
+  cursor: pointer;
+  margin-top: -1rem;
+  font-size: 2rem !important;
+  display: none !important;
+}
+.listContainer:hover .arrows {
+  display: block !important;
+}
+.listContainer:hover .arrowContainer {
+  background-color: rgb(0, 0, 0, 0.1);
+}
+.leftArrow {
+  padding: 1rem 2.5rem 1rem 1.5rem;
+  left: 0;
+  border-radius: 0 12px 12px 0;
+}
+.rightArrow {
+  padding: 1rem 3.2rem 1rem 1rem;
+  right: 0;
+  border-radius: 12px 0 0 12px;
+}
+
+.categorieList {
+  display: flex;
+  overflow-x: scroll;
+  padding: 0 4rem;
+  scroll-behavior: smooth;
+  // position: relative;
+}
+
+.categorieList::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .categorieList {
+    padding: 0 3rem;
+  }
+  .categorieTitle {
+    margin: 0 0 1rem 3rem;
+  }
+  .arrows {
+    margin-top: -0.7rem;
+    font-size: 1.2rem !important;
+  }
+  .leftArrow {
+    padding: 1rem 2rem 1rem 1rem;
+  }
+  .rightArrow {
+    padding: 1rem 2rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .categorieList {
+    padding: 0 2rem;
+  }
+  .categorieTitle {
+    margin: 0 0 1rem 2rem;
+  }
+  .arrows {
+    margin-top: -0.6rem;
+    font-size: 1rem !important;
+  }
+  .leftArrow {
+    padding: 1rem 1.3rem 1rem 0.7rem;
+  }
+  .rightArrow {
+    padding: 1rem 1.2rem 1rem 0.8rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .row {
+    margin-bottom: 2rem;
+  }
+  .categorieList {
+    padding: 0 1rem;
+  }
+  .categorieTitle {
+    margin: 0 0 0.5rem 1rem;
+  }
+  .arrowContainer {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .categorieTitle {
+    font-size: 1.3rem;
+  }
+}

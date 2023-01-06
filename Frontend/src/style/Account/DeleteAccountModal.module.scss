@@ -1,0 +1,86 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.content {
+  padding: 1rem 2rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: 1rem 0;
+  }
+  p {
+    color: black !important;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.confirmBtn {
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 0.8rem;
+  color: white !important;
+  border: 1px solid #d32f2f !important;
+  background-color: #d32f2f !important;
+}
+.cancelBtn {
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 0.8rem;
+  color: #d32f2f !important;
+  border: 1px solid #d32f2f !important;
+}
+
+@media (max-width: 800px) {
+  .content {
+    width: 30rem;
+  }
+}
+@media (max-width: 600px) {
+  .content {
+    padding: 1rem 1.5rem;
+    width: 25rem;
+
+    & > * {
+      margin: 0.7rem 0;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .content {
+    padding: 0.8rem 1rem;
+    width: 20rem;
+
+    & > * {
+      margin: 0.5rem 0;
+    }
+  }
+  .confirmBtn,
+  .cancelBtn {
+    width: 5rem;
+    height: 2rem;
+  }
+}
+@media (max-width: 380px) {
+  .content {
+    width: 18rem;
+  }
+}
+@media (max-width: 320px) {
+  .content {
+    width: 15.5rem;
+  }
+}

@@ -1,0 +1,219 @@
+.loadingContainer {
+  background-color: #141414;
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 5rem;
+
+  .loadingSpinner svg {
+    color: white;
+    transform: scale(2);
+  }
+}
+
+.banner {
+  // position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 88vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem 4rem;
+}
+
+.content {
+  width: 70%;
+  margin-bottom: 4rem;
+
+  h1 {
+    font-size: 5rem;
+  }
+  .overview {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+}
+
+.genres {
+  display: none;
+}
+
+.buttons {
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  flex-direction: row;
+
+  button {
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    padding: 0.7rem 2.5rem;
+    border-radius: 4px;
+    margin-right: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .smallScreenText {
+    display: none;
+  }
+  .icon {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+  }
+  .playButton {
+    background-color: white;
+  }
+  .infoButton {
+    background-color: rgba(109, 109, 110, 0.6);
+    color: white;
+  }
+  .listButton {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .banner {
+    padding: 1rem 3rem;
+  }
+  .content {
+    width: 85%;
+
+    h1 {
+      font-size: 4rem;
+    }
+    .overview {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .loadingContainer,
+  .banner {
+    height: 75vh;
+    padding: 1rem 2rem;
+  }
+  .content {
+    width: 85%;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+    .overview {
+      font-size: 1rem;
+    }
+  }
+  .buttons {
+    margin: 1rem 0 1rem 0;
+
+    button {
+      font-size: 1.2rem;
+      padding: 0.4rem 1.5rem;
+    }
+    .icon {
+      margin-right: 0.3rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .bigScreenText {
+    display: none;
+  }
+  .smallScreenText {
+    display: block !important;
+  }
+
+  .genres {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+    p {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin: 0.1rem 0.2rem 0.2rem 0;
+    }
+
+    & * + *::before {
+      content: "\2022";
+      color: rgba(248, 173, 33);
+      margin-right: 0.3rem;
+    }
+  }
+  .loadingContainer,
+  .banner {
+    height: 75vh;
+  }
+
+  .content {
+    width: 100%;
+    text-align: center;
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .overview {
+      display: none;
+    }
+  }
+  .buttons {
+    margin: 0.2rem 0 1rem 0;
+    justify-content: space-evenly;
+    align-items: center;
+    button {
+      font-size: 1rem;
+      padding: 0.3rem 1rem;
+    }
+    .icon {
+      margin-right: 0;
+    }
+    .playButton {
+      height: min-content;
+      svg {
+        margin-right: 0.3rem;
+      }
+    }
+    .listButton,
+    .infoButton {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: transparent;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 300;
+
+      svg {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .content {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .buttons {
+    .playButton {
+      padding: 0.2rem 0.7rem 0.2rem 0.35rem;
+    }
+  }
+}

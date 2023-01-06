@@ -1,0 +1,100 @@
+.similarMovie {
+  max-width: 250px;
+  background-color: #2f2f2f;
+  border-radius: 5px;
+  color: white;
+  margin: 0 1rem 1rem 0;
+  img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 140px;
+  }
+}
+
+.year_addToList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.8rem 0.5rem 0.8rem;
+  p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  .rating {
+    color: #46d369;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    .starIcons {
+      font-size: 1rem;
+      margin-left: 0.1rem;
+    }
+  }
+}
+
+.addToListIcon {
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.addToListIcon:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.overview {
+  font-size: 0.9rem;
+  color: #d2d2d2;
+  padding: 0 0.9rem 0.5rem 0.8rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 5.3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  cursor: pointer;
+}
+.overview:hover {
+  color: white;
+}
+.overview.show {
+  text-overflow: initial;
+  overflow: auto;
+  height: auto;
+  display: block;
+}
+@media (max-width: 1055px) {
+  .similarMovie {
+    max-width: 32%;
+    margin: 0 0.4rem 0.6rem 0;
+  }
+}
+@media (max-width: 800px) {
+  .year_addToList {
+    padding: 0.6rem 0.8rem 0.5rem 0.5rem;
+    p {
+      font-size: 0.9rem;
+    }
+    .rating {
+      font-size: 0.8rem;
+    }
+  }
+  .addToListIcon {
+    font-size: 2rem;
+  }
+  .overview {
+    font-size: 0.7rem;
+    padding: 0 0.2rem 0.5rem 0.5rem;
+    height: 4rem;
+  }
+}
+@media (max-width: 680px) {
+  .similarMovie {
+    // max-width: 32%;
+    margin: 0 0.3rem 0.5rem 0;
+  }
+}
