@@ -9,7 +9,7 @@ import LoginPageHeader from "../components/Layouts/LoginPageHeader";
 //// Style
 import classes from "../style/pages/LoginPage.module.scss";
 //// Shared
-import { login } from "../shared/constants/api";
+import { login, errorMessage } from "../shared/constants/api";
 import { AuthContext } from "../shared/context/auth-context";
 
 const LoginPage = () => {
@@ -20,6 +20,11 @@ const LoginPage = () => {
     staleTime: Infinity,
     retry: false,
   });
+
+  const resErrorMessage = errorMessage(
+    signInMutation.error,
+    "Login failed, please try again."
+  );
 
   const signInHandler = (data) => {
     signInMutation.mutateAsync(data).then((res) => {
@@ -34,7 +39,7 @@ const LoginPage = () => {
   return (
     <div className={classes.container}>
       <LoginPageHeader />
-      <LoginForm onSignIn={signInHandler} />
+      <LoginForm onSignIn={signInHandler} errorMessage={resErrorMessage} />
       <Footer />
     </div>
   );

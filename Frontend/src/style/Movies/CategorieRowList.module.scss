@@ -1,9 +1,11 @@
 .container {
   background-color: #141414;
+  // overflow-y: visible;
 }
 
 .categoriesList {
   display: flex;
   flex-direction: column;
+  // overflow-y: visible;
   // overflow-x: scroll;
 }

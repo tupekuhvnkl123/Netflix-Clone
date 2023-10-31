@@ -49,3 +49,11 @@ export const getRomance = async (data, username) =>
 
 export const getDocumentaries = async (data, username) =>
   (await axios.get(`/movies/documentaries`, data)).data;
+
+//# General err Message #\\
+export const errorMessage = (error, customMessage) =>
+  error
+    ? error.response && error.response.data && error.response.data.message
+      ? error.response.data.message
+      : customMessage
+    : null;

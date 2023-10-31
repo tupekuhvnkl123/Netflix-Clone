@@ -90,6 +90,17 @@
   }
 }
 
+.form .resErrorMessage {
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+  p {
+    color: #e87c03;
+    margin: 0;
+    font-size: 0.8rem;
+    width: 90%;
+  }
+}
+
 @media (max-width: 740px) {
   .form {
     padding: 1.5rem 2rem 4rem 2rem;

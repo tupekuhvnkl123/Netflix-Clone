@@ -11,7 +11,7 @@ import MovieItem from "./MovieItem";
 //// Style
 import classes from "../../style/Movies/CategorieRow.module.scss";
 
-const CategorieRow = ({ title, fetchFunction, onClickMovie }) => {
+const CategorieRow = ({ title, fetchFunction, onClickMovie, verticalRow }) => {
   const listRef = useRef(null);
 
   const { data, isLoading, isSuccess } = useQuery(title, fetchFunction, {
@@ -69,7 +69,9 @@ const CategorieRow = ({ title, fetchFunction, onClickMovie }) => {
         <div className={classes.listContainer}>
           <div
             onClick={scrollLeftHandler}
-            className={`${classes.arrowContainer} ${classes.leftArrow}`}
+            className={`${classes.arrowContainer} ${classes.leftArrow} ${
+              verticalRow ? classes.verticalRow : ""
+            }`}
           >
             <ArrowBackIosIcon className={classes.arrows} />
           </div>
@@ -81,7 +83,7 @@ const CategorieRow = ({ title, fetchFunction, onClickMovie }) => {
                 onClickMovie={() => onClickMovie(movie.id)}
                 movie={movie}
                 key={movie.id}
-                vertical={title === "Netflix Original" ? true : false}
+                vertical={verticalRow}
               />
             ))}
           </ul>
@@ -89,7 +91,9 @@ const CategorieRow = ({ title, fetchFunction, onClickMovie }) => {
 
           <div
             onClick={scrollRightHandler}
-            className={`${classes.arrowContainer} ${classes.rightArrow}`}
+            className={`${classes.arrowContainer} ${classes.rightArrow} ${
+              verticalRow ? classes.verticalRow : ""
+            }`}
           >
             <ArrowForwardIosIcon className={classes.arrows} />
           </div>

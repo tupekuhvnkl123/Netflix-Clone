@@ -1,3 +1,5 @@
+$arrowsHeight: 165px;
+
 .loadingCategorieList {
   display: flex;
   overflow: hidden;
@@ -12,6 +14,7 @@
 
 .row {
   margin-bottom: 3.5rem;
+  // overflow-y: visible;
 }
 .categorieTitle {
   color: white;
@@ -22,15 +25,23 @@
 
 .listContainer {
   position: relative;
+  overflow-y: visible; //!
 }
 
 .arrowContainer {
   position: absolute;
-  top: 0;
-  height: 100%;
+  top: 28.5%;
+  // height: 100%;
+  height: $arrowsHeight;
+
   cursor: pointer;
   transition: all 0.2s ease-out;
   z-index: 100;
+}
+.verticalRow {
+  top: 17.5%;
+  height: calc($arrowsHeight * 2.5);
+  // height: $arrowsHeight;
 }
 
 .arrowContainer:hover {
@@ -70,7 +81,9 @@
 .categorieList {
   display: flex;
   overflow-x: scroll;
-  padding: 0 4rem;
+  // overflow-y: hidden;
+  padding: 7rem 4rem;
+  margin: -7rem 0;
   scroll-behavior: smooth;
   // position: relative;
 }
@@ -82,6 +95,7 @@
 @media (max-width: 1200px) {
   .categorieList {
     padding: 0 3rem;
+    margin: 0;
   }
   .categorieTitle {
     margin: 0 0 1rem 3rem;

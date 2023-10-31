@@ -4,7 +4,7 @@ import classes from "../../style/Auth/CompleteRegisterForm.module.scss";
 //// Shared
 import useInput from "../../shared/hooks/useInput";
 
-const CompleteRegisterForm = ({ initialEmail, onSignUp }) => {
+const CompleteRegisterForm = ({ initialEmail, onSignUp, errorMessage }) => {
   const name = useInput((value) => value.length > 0);
 
   const email = useInput(
@@ -23,11 +23,6 @@ const CompleteRegisterForm = ({ initialEmail, onSignUp }) => {
     email.blurHandler();
     password.blurHandler();
     if (!formIsValid) return;
-    // console.log({
-    //   name: name.value,
-    //   email: email.value,
-    //   password: password.value,
-    // });
     onSignUp({
       name: name.value,
       email: email.value,
@@ -80,6 +75,11 @@ const CompleteRegisterForm = ({ initialEmail, onSignUp }) => {
             </p>
           )}
         </div>
+        {errorMessage && (
+          <div className={classes.resErrorMessage}>
+            <p>{errorMessage}</p>
+          </div>
+        )}
         <button type="button" onClick={submitHandler}>
           Sign Up
         </button>

@@ -13,7 +13,7 @@ import CompleteRegisterForm from "../components/Auth/CompleteRegisterForm";
 import classes from "../style/pages/LandingPage.module.scss";
 
 //// Shared
-import { register } from "../shared/constants/api";
+import { register, errorMessage } from "../shared/constants/api";
 import { AuthContext } from "../shared/context/auth-context";
 
 const LandingPage = () => {
@@ -31,6 +31,11 @@ const LandingPage = () => {
     setEmail(email);
     setShowCompleteForm(true);
   };
+
+  const resErrorMessage = errorMessage(
+    signUpMutation.error,
+    "Sign up failed, please try again."
+  );
 
   const signUpHandler = (data) => {
     signUpMutation.mutateAsync(data).then(() => {
@@ -50,7 +55,11 @@ const LandingPage = () => {
           <RegisterEmailForm completeRegister={completeRegister} />
         )}
         {showCompleteForm && (
-          <CompleteRegisterForm initialEmail={email} onSignUp={signUpHandler} />
+          <CompleteRegisterForm
+            initialEmail={email}
+            onSignUp={signUpHandler}
+            errorMessage={resErrorMessage}
+          />
         )}
       </div>
       <Footer />

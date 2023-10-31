@@ -35,6 +35,7 @@ const CategorieRowList = ({ onClickMovie }) => {
             key={title}
             title={title}
             fetchFunction={fetchFunction}
+            verticalRow={title === "Netflix Original"}
           />
         ))}
       </ul>
